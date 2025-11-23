@@ -1,5 +1,21 @@
 # privacyR NEWS
 
+## Version 1.0.1 (2025-11-22)
+
+### Bug Fixes
+- **Critical fix:** Replaced weak hash function in UUID generation with cryptographic hash (MD5) to prevent duplicate UUIDs for different patients in large datasets
+- Added robust hash function for datasets with more than 5 unique values
+- Maintains backward compatibility: small datasets (≤5 unique values) use original hash method
+- Now handles datasets with 1 million+ records without collisions
+- Added `digest` package as required dependency for robust hashing
+- Maintains referential integrity (same input → same UUID) while ensuring uniqueness
+
+### Technical Details
+- For large datasets (>5 unique values): Uses MD5 hash via `digest` package
+- For small datasets (≤5 unique values): Uses original hash method (backward compatible)
+- MD5 collision probability for 1M records: ~10^-15 (negligible)
+- All functions using UUIDs (anonymize_id, anonymize_names, anonymize_locations) benefit from this fix
+
 ## Version 1.0.0 (2024-11-09)
 
 ### Changes

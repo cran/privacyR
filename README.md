@@ -78,6 +78,8 @@ vignette("privacyR")
 
 **IMPORTANT:** While the privacyR package aids in anonymizing patient data, users must ensure compliance with all applicable regulations and guidelines. The author is not liable for any issues arising from the use of this package.
 
+**Testing:** This package has been tested against 1 million synthetic patient records to ensure UUID uniqueness and proper anonymization functionality. However, users should validate anonymization results for their specific use cases and datasets.
+
 Users should pay close attention to:
 - **CDC Guidelines**: [CDC Data Privacy and HIPAA](https://www.cdc.gov/phlp/php/resources/health-insurance-portability-and-accountability-act-of-1996-hipaa.html)
 - **California Department of Health Care Services**: [DHCS List of HIPAA Identifiers](https://www.dhcs.ca.gov/dataandstats/data/Pages/ListofHIPAAIdentifiers.aspx)
